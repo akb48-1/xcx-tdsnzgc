@@ -1,0 +1,40 @@
+<!-- index.wxml -->
+<view class="user-page">
+  <view class="user-info">
+    <view class="info-list">
+      <view class="info-item">
+        <view class="avatar-wrapper left-wrapper">
+          <image src="../../public/img/default-avatar.png" class="avatar"></image>
+        </view>
+        <view class="username">
+          <text wx:if="{{logined}}">{{username}}</text>
+          <text wx:if="{{!logined}}">未登录</text>
+        </view>
+      </view>
+      <view class="info-item">
+        <block wx:if="{{logined}}">
+          <view class="left-wrapper">所属门店:</view>
+          <view>{{organ_name}}</view>
+        </block>
+      </view>
+      <view class="info-item"></view>
+      <view class="info-item"></view>
+      <view class="info-item"></view>
+      <view class="info-item"></view>
+    </view>
+  </view>
+  <view class="btn-wrapper">
+    <view class="btn">
+      <navigator>
+        <button class="login-btn clearBtnStyle" bindtap="toLogin" wx:if="{{!logined}}">登陆</button>
+      </navigator>
+    </view>
+    <view class="btn">
+      <navigator>
+        <button class="outLogin-btn clearBtnStyle" bindtap="toOutLogin" wx:if="{{logined}}">
+          注销
+        </button>
+      </navigator>
+    </view>
+  </view>
+</view>

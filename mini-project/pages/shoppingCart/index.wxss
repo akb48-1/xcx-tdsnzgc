@@ -1,0 +1,113 @@
+/**index.wxss**/
+
+.shopping-cart-page {
+    position: relative;
+    padding-top: 20rpx;
+    padding-bottom: 100rpx;
+    height: 100vh;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.page-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 2em;
+    margin-bottom: 20rpx;
+}
+
+.goods-unit .goods-pic,
+.goods-unit .goods-pic image {
+    width: 160rpx;
+}
+
+.goods-item,
+.goods-unit .goods-pic,
+.goods-unit .goods-pic image {
+    height: 160rpx;
+}
+
+.goods-item {
+    position: relative;
+}
+
+.goods-wrapper {
+    padding: 18rpx 12rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.goods-wrapper:first-of-type {
+    border-top: 2rpx solid #ccc;
+}
+
+.goods-unit .goods-pic,
+.goods-unit .goods-buy {
+    position: absolute;
+}
+
+.goods-unit .goods-pic {
+    top: 0;
+    left: 0;
+}
+
+.goods-unit .goods-buy {
+    bottom: 0;
+    right: 0;
+}
+
+.goods-unit .goods-info {
+    margin: 0 0 0 160rpx;
+}
+
+.btn-warpper .btn {
+    text-align: center;
+    width: 60%;
+    margin: 20rpx auto;
+    border: 1px solid #23a0ff;
+    background-color: #23a0ff;
+    border-radius: 10rpx;
+}
+
+.btn-warpper .btn.clearCart {
+    border-color: #f00;
+    background-color: #f00;
+}
+
+.btn-warpper .btn .node {
+    color: #fff;
+}
+
+.tipsNode {
+    font-size: 28rpx;
+    padding: 20rpx 0;
+}
+
+.foot {
+    height: 80rpx;
+    position: absolute;
+    left: 0;
+    bottom: 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.foot .btn {
+    width: auto;
+    margin: 0;
+    display: inline-block;
+}
+
+.foot .btn .node {
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.foot .btn.buy .node {
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+}
+
+.btn.disabled {
+    background-color: #ccc !important;
+    border-color: #ccc !important;
+}

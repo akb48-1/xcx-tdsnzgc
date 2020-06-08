@@ -1,0 +1,66 @@
+<!-- index.wxml -->
+<view class="shopping-cart-page  section">
+    <view class="page-title">购物车</view>
+  <view class="goods-unit">
+    <view class="goods-list" wx:if="{{goodsList.length}}">
+      <block wx:for="{{goodsList}}" wx:key="*this">
+        <view class="goods-wrapper">
+          <view class="goods-item">
+            <view class="goods-pic">
+              <image src="{{BASE_URL + item.goods_picture}}"></image>
+            </view>
+            <view class="goods-info">
+              <view>{{item.goods_name}}</view>
+              <view>单价: {{item.goods_price}}</view>
+              <view>单位: {{item.unit_name}}</view>
+              <view>总价: {{item.goods_total_price}}</view>
+            </view>
+            <view class="goods-buy">
+              <counter info="{{item}}" wx:if="{{item.goods_id}}" bind:updateGoods="updateGoods"></counter>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="btn-warpper">
+        <view class="btn">
+          <navigator url="/pages/home/index" open-type="switchTab">
+            <button class="clearBtnStyle node">再加点~</button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="btn-warpper">
+        <view class="tipsNode">空空如也~</view>
+        <view class="btn">
+          <navigator url="/pages/home/index" open-type="switchTab">
+            <button class="clearBtnStyle node">立即去买</button>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="section foot">
+    <view class="btn-warpper clearfix">
+      <view bindtap="clearCart" class="btn clearCart fl  {{goodsList.length == 0? 'disabled' : ''}}">
+        <navigator>
+          <button class="clearBtnStyle node">清空购物车</button>
+        </navigator>
+      </view>
+      <view class="btn buy fr {{goodsList.length == 0? 'disabled' : ''}}">
+        <navigator>
+          <button class="clearBtnStyle node" bindtap="submit">结算</button>
+        </navigator>
+      </view>
+    </view>
+  </view>
+
+  <modal show="{{modalShow}}" title="商品清单" 
+    confirm-text="提交"
+    cancel-text="关闭"
+    bind:confirm="confirm"
+   >
+    <listing data="{{goodsList}}"  column="{{column}}" wx:if="modalShow" slot="content"></listing>
+  </modal>
+  
+</view>

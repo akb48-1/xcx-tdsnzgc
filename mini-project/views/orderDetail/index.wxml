@@ -1,0 +1,107 @@
+<!-- index.wxml -->
+<view class="section order-detail-page page {{maskShow? 'pageFixed' : ''}}" >
+  <view class="page-title">订单详情</view>
+  <listing data="{{goodsList}}" column="{{column}}" slot="content"></listing>
+  <mp-form id="form" rules="{{rules}}" models="{{formData}}">
+    <mp-cells>
+      <mp-cell prop="order_price" title="订单金额 ：" ext-class="defSize">
+        <view class="weui-cell">
+          <input class="weui-input" value="{{formData.order_price}}" disabled />
+        </view>
+      </mp-cell>
+      <mp-cell prop="real_price" title="交易应付金额 ：" ext-class="defSize">
+        <view class="weui-cell">
+          <input class="weui-input" value="{{formData.real_price}}" disabled />
+        </view>
+      </mp-cell>
+      <mp-cell prop="payment_price" title="实付金额 ：" ext-class="defSize">
+        <view class="weui-cell">
+          <input bindinput="formInputChange" data-field="payment_price" class="weui-input" placeholder="请输入实付金额" disabled="{{formData.order_id}}"  value="{{formData.payment_price}}"/>
+        </view>
+      </mp-cell>
+      <mp-cell prop="payment_type" title="支付方式 ：" ext-class="defSize">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{formData.payment_type}}" range="{{paymentTypeList}}"
+                range-key="payment_type_name" 
+                data-field="payment_type"
+                data-value="payment_type_value"
+                data-name="payment_type_name"
+                data-range="paymentTypeList"
+             >
+            <view class="weui-select">{{formData.payment_type_name}}</view>
+            </picker>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell prop="seller_id" title="销售员 ：" ext-class="defSize">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{formData.seller_id}}" range="{{sellerList}}" 
+                  range-key="seller_name"
+                  data-field="seller_id" 
+                  data-value="seller_id"
+                  data-name="seller_name" 
+                  data-range="sellerList"
+                >
+              <view class="weui-select">{{formData.seller_name}}</view>
+            </picker>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell prop="shipping_methods" title="物流方式 ：" ext-class="defSize">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{formData.shipping_methods}}" range="{{shippingMethodsList}}"
+                range-key="shipping_methods_name" 
+                data-field="shipping_methods" 
+                data-value="shipping_methods_value"
+                data-name="shipping_methods_name" 
+                data-range="shippingMethodsList"
+              >
+
+              <view class="weui-select">{{formData.shipping_methods_name}}</view>
+            </picker>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell prop="chauffeur_name" title="司机名称 ：" ext-class="defSize">
+        <view class="weui-cell">
+          <input class="weui-input" value="{{formData.chauffeur_name}}" />
+        </view>
+      </mp-cell>
+      <mp-cell prop="car_type" title="车型 ：" ext-class="defSize">
+        <view class="weui-cell weui-cell_select">
+          <view class="weui-cell__bd">
+            <picker bindchange="bindPickerChange" value="{{formData.car_type_id}}" range="{{carTypeList}}"
+              range-key="car_type_name" 
+              data-field="car_type" 
+              data-value="car_type_value"
+              data-name="car_type_name" 
+              data-range="carTypeList"
+              >
+              <view class="weui-select">{{formData.car_type_name}}</view>
+            </picker>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell prop="create_time" title="订单日期 ：" ext-class="defSize">
+        <view class="weui-cell ">
+          <view class="weui-cell__bd">
+            <picker data-field="create_time" mode="date" value="{{formData.create_time}}" start="2015-09-01" end="2099-12-31" bindchange="bindDateChange">
+              <view class="weui-input">{{formData.create_time}}</view>
+            </picker>
+          </view>
+        </view>
+      </mp-cell>
+      <mp-cell  prop="order_desc" title="订单描述 ：" ext-class="defSize">
+        <textarea class="weui-textarea" placeholder="请输入文本" style="height: 5em" maxlength="100" bindinput="formInputChange" data-field="order_desc" />
+      </mp-cell>
+    </mp-cells>
+    <view class="weui-btn-area " ext-class="">
+      <button class="weui-btn  clearBtnStyle" type="primary" bindtap="submitForm">确定</button>
+    </view>
+  </mp-form>
+
+  <mask wx:if="{{maskShow}}" ></mask>
+</view>

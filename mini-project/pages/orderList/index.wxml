@@ -1,0 +1,47 @@
+<!-- index.wxml -->
+<view class="order-list section">
+  <mp-tabs class="tabs" tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabClick" bindchange="onChange" activeClass="tab-bar-title__selected">
+    <block wx:for="{{tabs}}" wx:key="title">
+      <view class="tab-content {{activeTab ==  index? 'current-tab' : ''}}" data-index="{{index}}" slot="tab-content-{{index}}" bind:tap="handleClick">
+        <view class="item-title">{{item.title}}</view>
+        <view class="line"></view>
+      </view>
+    </block>
+  </mp-tabs>
+  <view hidden="{{0 !=  activeTab}}">
+    <block wx:for="{{orderList}}" wx:key="*this">
+    <view class="goods-order order-info">
+      <view class="order-head">
+        <view class="order-time">{{item.create_time}}</view>
+        <view class="order-status">
+          <text class="green" wx:if="{{item.payment_status == 1}}">{{orderStatus[item.payment_status]}}</text>
+          <text class="blue" wx:if="{{item.payment_status == 2}}">{{orderStatus[item.payment_status]}}</text>
+          <text class="red" wx:if="{{item.payment_status == 3}}">{{orderStatus[item.payment_status]}}</text>
+        </view>
+      </view>
+      <view class="order-content">
+          <view class="goods-info">
+            <listing data="{{item.goodsRecords}}" column="{{column}}"></listing>
+          </view>
+      </view>
+      <view class="order-foot">
+        <view class="table">
+          <view class="order-price">总价 : {{item.order_price}}</view>
+          <view class="order-price">实价 : {{item.real_price}}</view>
+          <view class="order-price">付款 : {{item.payment_price}}</view>
+          <view class="order-seller">销售员 : {{item.seller_name}}</view>
+        </view>
+        <view class="order-desc">描述 : {{item.order_desc}}</view>
+      </view>
+    </view>
+    </block>
+        <view wx:if="{{noMoreShow}}" class="no-more">
+      <text>没有更多了~</text>
+    </view>
+  </view>
+  <view hidden="{{1 !=  activeTab}}">
+        <view wx:if="{{noMoreShow}}" class="no-more">
+      <text>敬请期待~</text>
+    </view>
+  </view>
+</view>

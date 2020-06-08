@@ -1,0 +1,77 @@
+/**index.wxss**/
+
+.banner {
+    width: 100%;
+}
+
+.classify {
+    padding: 20rpx 0;
+}
+
+.goods-unit .goods-pic,
+.goods-unit .goods-pic image {
+    width: 160rpx;
+}
+
+.goods-item,
+.goods-unit .goods-pic,
+.goods-unit .goods-pic image {
+    height: 160rpx;
+}
+
+.goods-item {
+    position: relative;
+}
+
+.goods-wrapper {
+    padding: 18rpx 12rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.goods-wrapper:first-of-type {
+    border-top: 2rpx solid #ccc;
+}
+
+.goods-unit .goods-pic,
+.goods-unit .goods-buy {
+    position: absolute;
+}
+
+.goods-unit .goods-pic {
+    top: 0;
+    left: 0;
+}
+
+.goods-unit .goods-buy {
+    bottom: 0;
+    right: 0;
+}
+
+.goods-unit .goods-info {
+    margin: 0 0 0 160rpx;
+}
+
+.no-more {
+    text-align: center;
+    padding: 30rpx;
+}
+
+.classifyBtn {
+    display: inline-block;
+    margin: 0 5px;
+    border: 2rpx solid #ccc;
+    color: #ccc;
+    padding: 8rpx 16rpx;
+    border-radius: 4rpx;
+}
+
+.classifyBtn.active {
+    border-color: #f00;
+    background-color: #f00;
+    color: #fff;
+}
+
+.scroll-view_H {
+    width: 100%;
+    white-space: nowrap;
+}

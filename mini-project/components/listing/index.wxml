@@ -1,0 +1,20 @@
+<view class="listing">
+    <view class="table">
+        <view class="thead">
+            <view class="tr">
+                <block wx:for="{{column}}" wx:key="*this">
+                    <view class="th">{{item.title}}</view>
+                </block>
+            </view>
+        </view>
+        <view class="data">
+            <block wx:for="{{data}}" wx:key="*this" wx:for-item="item2" wx:for-index="idx2">
+                <view class="tr">
+                    <block wx:for="{{column}}" wx:key="*this" wx:for-item="item1" wx:for-index="idx1">
+                        <view class="td">{{item2[item1.key]}}</view>
+                    </block>
+                </view>
+            </block>
+        </view>
+    </view>
+</view>

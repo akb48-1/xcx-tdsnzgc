@@ -1,0 +1,5 @@
+Component({
+    created() {
+        wx.showLoading()
+    }
+})

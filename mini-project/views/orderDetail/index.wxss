@@ -1,0 +1,13 @@
+/**index.wxss**/
+
+.page-title {
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 2em;
+    margin-bottom: 20rpx;
+}
+
+.order-detail-page {
+    padding-top: 20rpx;
+    padding-bottom: 100rpx;
+}

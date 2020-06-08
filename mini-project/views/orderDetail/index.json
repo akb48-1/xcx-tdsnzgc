@@ -1,0 +1,13 @@
+{
+    "navigationBarTitleText": "订单",
+    "usingComponents": {
+        "listing": "../../components/listing/index",
+        "mask": "../../components/mask/index",
+        "mp-toptips": "/miniprogram_npm/weui-miniprogram/toptips/toptips",
+        "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
+        "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
+        "mp-checkbox": "/miniprogram_npm/weui-miniprogram/checkbox/checkbox",
+        "mp-checkbox-group": "/miniprogram_npm/weui-miniprogram/checkbox-group/checkbox-group",
+        "mp-form": "/miniprogram_npm/weui-miniprogram/form/form"
+    }
+}

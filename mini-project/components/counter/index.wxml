@@ -1,0 +1,9 @@
+<view class="inner flex">
+    <view wx:if="{{info.count}}" bindtap="add" data-num="{{-1}}">
+        <text class="iconfont icon-offline disabled"></text>
+    </view>
+    <view wx:if="{{info.count}}" class="num">{{info.count}}</view>
+    <view bindtap="add" data-num="{{1}}">
+        <text class="iconfont icon-addition_fill"></text>
+    </view>
+</view>

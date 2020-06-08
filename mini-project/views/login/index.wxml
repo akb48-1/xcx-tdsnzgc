@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<view class="login-page  pageFixed">
+  <view class="section">
+    <view class="form-wrapper">
+      <mp-form id="form" rules="{{rules}}" models="{{formData}}" class="login-form">
+        <view class="logo-wrapper">
+          <image src="../../public/img/login.png" class="logo" mode="aspectFit"></image>
+        </view>
+        <mp-cells>
+          <mp-cell prop="username" title="用户名 ：" ext-class="defSize">
+            <view class="weui-cell">
+              <input bindinput="formInputChange" data-field="username" class="weui-input" placeholder="请输入用户名" value="{{formData.username}}" />
+            </view>
+          </mp-cell>
+          <mp-cell prop="password" title="密码 ：" ext-class="defSize">
+            <view class="weui-cell">
+              <input bindinput="formInputChange" data-field="password" class="weui-input" placeholder="请输入密码" value="{{formData.password}}" password />
+            </view>
+          </mp-cell>
+        </mp-cells>
+        <view class="weui-btn-area " ext-class="defSize">
+          <button bindtap="submit" class="clearBtnStyle">登陆</button>
+        </view>
+        <view class="weui-btn-area " ext-class="defSize">
+          <button bindtap="reset" class="clearBtnStyle">重置</button>
+        </view>
+      </mp-form>
+    </view>
+  </view>
+    <mask wx:if="{{maskShow}}"></mask>
+</view>

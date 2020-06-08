@@ -1,0 +1,4 @@
+<view class="modal">
+    <mask style="top:0;right:0;bottom:0;left:0;"></mask>
+    <!-- <view class="modal-mask"></view> -->
+</view>

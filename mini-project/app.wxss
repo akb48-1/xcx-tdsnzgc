@@ -1,0 +1,83 @@
+@import '/miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+@import './static/iconfont/iconfont.wxss';
+
+/**app.wxss**/
+
+
+/* .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} */
+
+.defSize,
+page {
+    font-size: 24rpx !important;
+}
+
+.section {
+    padding: 0 20rpx;
+}
+
+.clearfix::after {
+    content: '';
+    clear: both;
+    height: 0;
+    width: 0;
+    display: block;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.flex {
+    display: flex;
+}
+
+.clearBtnStyle {
+    padding: 12rpx 20rpx;
+    background-color: transparent;
+    border: none;
+    line-height: 56rpx;
+    font-size: 24rpx;
+}
+
+.clearBtnStyle:after {
+    width: 0;
+    height: 0;
+}
+
+
+/* 禁止页面滚动 */
+
+.pageFixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+/* weui */
+
+.weui-cell {
+    padding-top: 16rpx;
+    padding-bottom: 16rpx;
+    padding-left: 16rpx;
+}
+
+.weui-select {
+    padding-left: 0;
+    height: 56rpx;
+    line-height: 56rpx;
+}

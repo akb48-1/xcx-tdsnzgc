@@ -1,0 +1,74 @@
+/**index.wxss**/
+
+.tabs {
+    display: flex;
+}
+
+.tabs .tab-content {
+    display: inline-block;
+    font-size: 32rpx;
+    font-weight: bold;
+    margin: 0 10rpx;
+    line-height: 2;
+    padding: 0 10rpx;
+}
+
+.tabs .tab-content .line {
+    display: block;
+    height: 2rpx;
+    background-color: transparent;
+}
+
+.tab-content.current-tab .line {
+    background-color: green;
+}
+
+.order-head {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.order-foot .table {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.order-foot .order-price,
+.order-foot .order-seller {
+    width: 50%;
+}
+
+.order-info {
+    border-bottom: 2rpx solid #ccc;
+    margin-bottom: 30rpx;
+    padding-bottom: 20rpx;
+}
+
+.order-info:first-of-type {
+    border-top: 2rpx solid #ccc;
+    margin-top: 30rpx;
+    padding-top: 20rpx;
+}
+
+.green {
+    color: green;
+}
+
+.blue {
+    color: blue;
+}
+
+.red {
+    color: red;
+}
+
+.no-more {
+    text-align: center;
+    padding: 30rpx;
+}

@@ -1,0 +1,70 @@
+/**index.wxss**/
+
+.user-page {
+    background-color: #e6e6e6;
+    height: 100vh;
+}
+
+.user-info {
+    background-color: #fff;
+}
+
+.info-item,
+.avatar-wrapper {
+    height: 100rpx;
+}
+
+.info-item {
+    border-bottom: 2rpx solid #e6e6e6;
+    line-height: 100rpx;
+    padding: 20rpx 30rpx;
+}
+
+.info-item {
+    display: flex;
+}
+
+.left-wrapper.avatar-wrapper {
+    width: 100rpx;
+    padding: 0 50rpx;
+}
+
+.left-wrapper {
+    width: 120rpx;
+    padding: 0 20rpx 0 40rpx;
+}
+
+.avatar-wrapper .avatar {
+    width: 100%;
+    height: 100%;
+}
+
+.username {
+    margin-left: 20rpx;
+}
+
+.btn-wrapper {
+    background-color: #fff;
+    text-align: center;
+    padding: 20rpx 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.btn {
+    width: 50%;
+    margin: 20rpx auto;
+}
+
+.btn button {
+    background-color: #eee;
+    border-radius: 10rpx;
+    color: #888;
+}
+
+.btn button.login-btn {
+    background-color: #1296db;
+    color: #fff;
+}

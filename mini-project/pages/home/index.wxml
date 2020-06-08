@@ -1,0 +1,45 @@
+<!-- index.wxml -->
+<wxs module="array" src="../../utils/util.wxs"></wxs>
+<view class="container">
+  <view class="banner">
+    <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{background}}" wx:key="*this">
+        <swiper-item>
+          <view class="swiper-item {{item}}">{{item}}</view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="classify section">
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" enable-flex="{{true}}">
+          <block wx:for="{{classifyList}}" wx:key="*this">
+            <view class="classifyBtn {{item.active? 'active': ''}}" bindtap="selectClassify" data-classify_id="{{item.classify_id}}">
+              {{item.classify_name}}
+            </view>
+          </block>
+    </scroll-view>
+  </view>
+  <view class="goods-unit section">
+      <view class="goods-list">
+        <block wx:for="{{goodsList}}" wx:key="index">
+          <view class="goods-wrapper">
+            <view class="goods-item">
+                <view class="goods-pic">
+                  <image src="{{BASE_URL + item.goods_picture}}"></image>
+                </view>
+                <view class="goods-info">
+                  <view>{{item.goods_name}}</view>
+                  <view>￥{{item.goods_price}}/{{item.unit_name}}</view>
+                </view>
+                <view class="goods-buy">
+                  <counter info="{{item}}" wx:if="{{item.goods_id ===  item.goods_id}}"></counter>
+                </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <view wx:if="{{noMoreShow}}" class="no-more">
+        <text>没有更多了~</text>
+      </view>
+  </view>
+</view>

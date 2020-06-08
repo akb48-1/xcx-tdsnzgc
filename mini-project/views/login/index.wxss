@@ -1,0 +1,93 @@
+/**index.wxss**/
+
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    color: #fff;
+}
+
+.login-form {
+    flex: 0.6;
+    margin: 0 auto;
+    transform: translateY(-30%);
+    position: relative;
+}
+
+.login-form .input-placeholder {
+    color: #fff;
+}
+
+.weui-label {
+    width: 105rpx;
+    text-align: right;
+}
+
+.weui-cell:before {
+    left: 0;
+}
+
+.weui-cells:before {
+    border: 0;
+}
+
+.weui-btn-area {
+    margin: 0;
+}
+
+.weui-btn-area button {
+    display: block;
+    margin: 30rpx auto;
+    background-color: #52aee9;
+    color: #fff;
+}
+
+.weui-btn-area button.button-hover {
+    background-color: #4faae5;
+}
+
+.weui-btn-area button::after {
+    border: 0;
+}
+
+.weui-cell-inform {
+    border-bottom: 2rpx solid #fff;
+}
+
+.weui-cells {
+    background-color: none;
+}
+
+.weui-cells:after,
+.weui-cell::before {
+    border: 0;
+}
+
+.weui-cells__group {
+    padding: 30rpx;
+    background-color: #30b7f0;
+}
+
+.weui-cells__group .weui-cells {
+    background-color: #30b7f0;
+    margin-top: 0;
+}
+
+.login-page {
+    background-image: linear-gradient( #0fbef5, #3584d8);
+}
+
+.logo {
+    width: 100rpx;
+    height: 100rpx;
+    margin: 0 auto;
+}
+
+.logo-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+}
