@@ -72,6 +72,10 @@ Page({
     },
     queryOrderByPage(params = {}) {
         !this.data.noMoreShow && queryOrderByPage({...this.data.page, ...params }).then(res => {
+            res.data.list.forEach(item => {
+                item.order_time = item.order_time ? item.order_time.split(' ')[0] : '';
+                item.order_desc = item.order_desc || '';
+            })
 
             let orderList = res.data.list;
             if (params.type === 'concat') {

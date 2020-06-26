@@ -10,10 +10,19 @@
               <image src="{{BASE_URL + item.goods_picture}}"></image>
             </view>
             <view class="goods-info">
-              <view>{{item.goods_name}}</view>
-              <view>单价: {{item.goods_price}}</view>
-              <view>单位: {{item.unit_name}}</view>
-              <view>总价: {{item.goods_total_price}}</view>
+              <view class="goods-info-row">
+                                <view>{{item.goods_name}}</view>
+              </view>
+              <view class="goods-info-row">
+                                <view>单价: {{item.goods_price}}</view>
+              </view>
+              
+              
+              <view class="goods-info-row">
+                <view>单位: {{item.unit_name}}</view>
+                <view>总价: {{item.goods_total_price}}￥</view>
+              </view>
+              
             </view>
             <view class="goods-buy">
               <counter info="{{item}}" wx:if="{{item.goods_id}}" bind:updateGoods="updateGoods"></counter>
@@ -40,7 +49,7 @@
       </view>
     </view>
   </view>
-  <view class="section foot">
+  <view class="section foot" wx:if="{{goodsList.length}}">
     <view class="btn-warpper clearfix">
       <view bindtap="clearCart" class="btn clearCart fl  {{goodsList.length == 0? 'disabled' : ''}}">
         <navigator>

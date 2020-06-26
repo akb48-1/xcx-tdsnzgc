@@ -7,14 +7,14 @@
           <image src="../../public/img/default-avatar.png" class="avatar"></image>
         </view>
         <view class="username">
-          <text wx:if="{{logined}}">{{username}}</text>
+          <text wx:if="{{logined}}">{{userInfo.username}}</text>
           <text wx:if="{{!logined}}">未登录</text>
         </view>
       </view>
       <view class="info-item">
         <block wx:if="{{logined}}">
           <view class="left-wrapper">所属门店:</view>
-          <view>{{organ_name}}</view>
+          <view>{{userInfo.organ_name}}</view>
         </block>
       </view>
       <view class="info-item"></view>

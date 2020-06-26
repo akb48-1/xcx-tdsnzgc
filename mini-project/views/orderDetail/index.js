@@ -91,7 +91,7 @@ const rules = [{
         message: '请选择车型'
     }]
 }, {
-    name: 'create_time',
+    name: 'order_time',
     rules: [{
         required: true,
         message: '请选择订单日期'

@@ -1,13 +1,13 @@
 //index.js
 //获取应用实例
 import { username, clearCache } from '../../http/request.js'
+import { queryUserInfoByToken } from '../../http/index.js'
 const app = getApp()
 
 Page({
     data: {
-        username: '',
         logined: false,
-        organ_name: '未知'
+        userInfo: {}
     },
 
     toLogin() {
@@ -15,8 +15,8 @@ Page({
             url: '/views/login/index'
         })
         this.setData({
-            username: '',
-            logined: false
+            logined: false,
+            userInfo: {}
         })
     },
     toOutLogin() {
@@ -26,7 +26,7 @@ Page({
                 if (sm.confirm) {
                     clearCache()
                     this.setData({
-                        username: '',
+                        userInfo: {},
                         logined: false
                     })
                     this.dialoglogin()
@@ -44,10 +44,21 @@ Page({
             }
         })
     },
+    queryUserInfoByToken() {
+        queryUserInfoByToken().then(res => {
+            console.log(res)
+            this.setData({
+                userInfo: res.data
+            })
+            wx.setStorageSync('userInfo', res.data)
+        })
+    },
     onLoad: function() {
         this.setData({
-            username: wx.getStorageSync(username),
             logined: !!wx.getStorageSync(username)
         })
+        if (this.data.logined) {
+            this.queryUserInfoByToken()
+        }
     },
 })

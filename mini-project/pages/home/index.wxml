@@ -1,11 +1,15 @@
 <!-- index.wxml -->
 <wxs module="array" src="../../utils/util.wxs"></wxs>
+
 <view class="container">
+
   <view class="banner">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
-      <block wx:for="{{background}}" wx:key="*this">
+      <block wx:for="{{bannerList}}" wx:key="*this">
         <swiper-item>
-          <view class="swiper-item {{item}}">{{item}}</view>
+          <view class="swiper-item">
+            <image src="{{BASE_URL + item.banner_url}}"></image>
+          </view>
         </swiper-item>
       </block>
     </swiper>

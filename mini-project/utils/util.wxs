@@ -1,10 +1,9 @@
 var array = {
-    includes: function (arr = [], item) {
-        console.log(arr)
+    includes: function(arr = [], item) {
         return arr.includes(item)
     }
 }
 
 module.exports = {
-    includes: array.includes
+    includes: array.includes,
 }

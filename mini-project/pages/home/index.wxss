@@ -1,7 +1,13 @@
 /**index.wxss**/
 
-.banner {
-    width: 100%;
+.banner,
+.banner .swiper-item image {
+    width: 750rpx;
+    height: 300rpx;
+}
+
+.banner swiper {
+    height: 100%;
 }
 
 .classify {
@@ -10,13 +16,13 @@
 
 .goods-unit .goods-pic,
 .goods-unit .goods-pic image {
-    width: 160rpx;
+    width: 130rpx;
 }
 
 .goods-item,
 .goods-unit .goods-pic,
 .goods-unit .goods-pic image {
-    height: 160rpx;
+    height: 130rpx;
 }
 
 .goods-item {

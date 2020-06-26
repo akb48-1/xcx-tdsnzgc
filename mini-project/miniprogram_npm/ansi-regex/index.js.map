@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.js"],"names":[],"mappings":";;;;;;;AAAA;AACA;AACA;AACA;AACA","file":"index.js","sourcesContent":["\nmodule.exports = function () {\n\treturn /\\u001b\\[(?:[0-9]{1,3}(?:;[0-9]{1,3})*)?[m|K]/g;\n};\n"]}

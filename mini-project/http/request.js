@@ -37,7 +37,12 @@ export function http(params = {}) {
             success(res) {
 
                 var data = res.data;
-                if (data.success === false) {
+
+                if (data && data.success) {
+
+                    resolve(res.data);
+
+                } else {
                     wx.showToast({
                         title: data.message,
                         icon: 'none'
@@ -57,10 +62,7 @@ export function http(params = {}) {
                         }
                     }
                     reject();
-                } else {
-                    resolve(res.data);
                 }
-
             },
             fail(err) {
                 wx.showToast({

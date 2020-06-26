@@ -2,13 +2,14 @@
 //获取应用实例
 const app = getApp()
 
-import { queryAllClassify, queryGoodsByPage, queryAllUnit } from '../../http/index.js'
+import { queryAllClassify, queryGoodsByPage, queryAllUnit, queryAllBanner } from '../../http/index.js'
 import { getShoppingCartData } from '../..//utils/util'
 
+console.log(queryAllBanner)
 Page({
     data: {
+        bannerList: [],
         BASE_URL: app.globalData.BASE_URL,
-        background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
         indicatorDots: true,
         vertical: false,
         autoplay: false,
@@ -24,7 +25,13 @@ Page({
         },
         noMoreShow: false,
     },
-
+    queryAllBanner() {
+        queryAllBanner({ type: 0 }).then(res => {
+            this.setData({
+                bannerList: res.data
+            })
+        })
+    },
     queryClassifyList() {
         queryAllClassify().then(res => {
             res.data.forEach(element => {
@@ -181,6 +188,7 @@ Page({
     init() {
         this.queryClassifyList()
         this.queryAllUnit()
+        this.queryAllBanner()
     },
     onLoad: function(options) {
         this.init()

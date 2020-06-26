@@ -16,7 +16,6 @@ import { http } from '../http/request.js'
     }], that)
  */
 export function loadData(arr = [], that) {
-    console.log(that, 77777)
 
     var newData = {};
     arr.forEach(item => {

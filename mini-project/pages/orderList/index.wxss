@@ -39,8 +39,7 @@
     flex-wrap: wrap;
 }
 
-.order-foot .order-price,
-.order-foot .order-seller {
+.order-foot .table view {
     width: 50%;
 }
 

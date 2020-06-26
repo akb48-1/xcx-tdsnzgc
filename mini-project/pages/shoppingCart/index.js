@@ -72,11 +72,21 @@ Page({
         if (!this.data.goodsList.length) {
             return;
         }
-        setShoppingCartData([])
+        let that = this;
+        wx.showModal({
+            content: '确定清空吗',
+            success(res) {
+                if (res.confirm) {
+                    setShoppingCartData([])
 
-        this.setData({
-            goodsList: getShoppingCartData()
+                    that.setData({
+                        goodsList: getShoppingCartData()
+                    })
+
+                }
+            }
         })
+
     },
     submit() {
         if (!this.data.goodsList.length) {

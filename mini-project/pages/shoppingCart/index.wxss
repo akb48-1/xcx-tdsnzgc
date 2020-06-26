@@ -18,13 +18,13 @@
 
 .goods-unit .goods-pic,
 .goods-unit .goods-pic image {
-    width: 160rpx;
+    width: 130rpx;
 }
 
 .goods-item,
 .goods-unit .goods-pic,
 .goods-unit .goods-pic image {
-    height: 160rpx;
+    height: 130rpx;
 }
 
 .goods-item {
@@ -56,7 +56,20 @@
 }
 
 .goods-unit .goods-info {
-    margin: 0 0 0 160rpx;
+    margin: 0 160rpx 0 160rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 130rpx;
+}
+
+.goods-unit .goods-info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tipsNode {
+    text-align: center;
 }
 
 .btn-warpper .btn {

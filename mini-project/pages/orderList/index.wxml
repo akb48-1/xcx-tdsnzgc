@@ -12,7 +12,7 @@
     <block wx:for="{{orderList}}" wx:key="*this">
     <view class="goods-order order-info">
       <view class="order-head">
-        <view class="order-time">{{item.create_time}}</view>
+        <view class="order-time">登记时间 : {{item.create_time}}</view>
         <view class="order-status">
           <text class="green" wx:if="{{item.payment_status == 1}}">{{orderStatus[item.payment_status]}}</text>
           <text class="blue" wx:if="{{item.payment_status == 2}}">{{orderStatus[item.payment_status]}}</text>
@@ -26,12 +26,15 @@
       </view>
       <view class="order-foot">
         <view class="table">
-          <view class="order-price">总价 : {{item.order_price}}</view>
-          <view class="order-price">实价 : {{item.real_price}}</view>
-          <view class="order-price">付款 : {{item.payment_price}}</view>
+          <view class="order-order_price">总价 : {{item.order_price}}</view>
+          <view class="order-real_price">实价 : {{item.real_price}}</view>
+          <view class="order-payment_price">付款 : {{item.payment_price}}</view>
           <view class="order-seller">销售员 : {{item.seller_name}}</view>
+          <view class="order-desc">描述 : {{item.order_desc}}</view>
+          <view class="order-time">交易时间 : {{item.order_time}}</view>
+          <view class="order-registrant">登记者 : {{item.createer_name}}</view>
         </view>
-        <view class="order-desc">描述 : {{item.order_desc}}</view>
+        
       </view>
     </view>
     </block>

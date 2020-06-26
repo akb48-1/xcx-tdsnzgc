@@ -67,7 +67,7 @@
       </mp-cell>
       <mp-cell prop="chauffeur_name" title="司机名称 ：" ext-class="defSize">
         <view class="weui-cell">
-          <input class="weui-input" value="{{formData.chauffeur_name}}" />
+          <input bindinput="formInputChange" data-field="chauffeur_name" class="weui-input" placeholder="请输入司机名称" disabled="{{formData.chauffeur_name}}" value="{{formData.chauffeur_name}}" />
         </view>
       </mp-cell>
       <mp-cell prop="car_type" title="车型 ：" ext-class="defSize">
@@ -85,11 +85,11 @@
           </view>
         </view>
       </mp-cell>
-      <mp-cell prop="create_time" title="订单日期 ：" ext-class="defSize">
+      <mp-cell prop="order_time" title="订单日期 ：" ext-class="defSize">
         <view class="weui-cell ">
           <view class="weui-cell__bd">
-            <picker data-field="create_time" mode="date" value="{{formData.create_time}}" start="2015-09-01" end="2099-12-31" bindchange="bindDateChange">
-              <view class="weui-input">{{formData.create_time}}</view>
+            <picker data-field="order_time" mode="date" value="{{formData.order_time}}" start="2015-09-01" end="2099-12-31" bindchange="bindDateChange">
+              <view class="weui-input">{{formData.order_time}}</view>
             </picker>
           </view>
         </view>

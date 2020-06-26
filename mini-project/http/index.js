@@ -89,3 +89,20 @@ export function queryOrderByPage(params = {}) {
         data: params
     })
 }
+
+// 本商铺所有banner图
+export function queryAllBanner(params = {}) {
+    return http({
+        url: '/banner/queryAll',
+        methods: 'post',
+        data: params
+    })
+}
+
+// 本商铺所有banner图
+export function queryUserInfoByToken() {
+    return http({
+        url: '/user/queryUserInfoByToken',
+        methods: 'post'
+    })
+}
