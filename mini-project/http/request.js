@@ -1,8 +1,8 @@
-let BASE_URL = 'http://192.168.43.127:8088';
+let BASE_URL = 'http://127.0.0.1:8088';
 const app = getApp()
 const envVersion = __wxConfig.envVersion;
 if (envVersion === 'develop') {
-    BASE_URL = 'http://192.168.43.127:8088';
+    BASE_URL = 'http://127.0.0.1:8088';
 }
 app.globalData.BASE_URL = BASE_URL;
 
